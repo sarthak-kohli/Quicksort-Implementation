@@ -1,0 +1,77 @@
+#include <iostream>
+
+using namespace std;
+int partition(int arr2[],int p2,int r2);
+
+
+int quicksort(int arr1[],int p1,int r1)
+{
+    int q;
+    if(p1<r1)
+    {
+
+       q=partition(arr1,p1,r1);
+       quicksort(arr1,p1,q-1);
+       quicksort(arr1,q+1,r1);
+    }
+  /*  cout<<"happy"<<endl;
+    cout<<arr1[0];
+    cout<<arr1[1];
+    bcout<<arr1[2];*/
+    return *arr1;
+}
+int partition(int arr2[],int p2,int r2)
+{
+    int x,a;
+    //cout<<"g";
+
+    int i,j;
+    x=arr2[r2];
+    i=p2;
+    j=i;
+    while(j<r2)
+    {
+        if(arr2[j]>=x)
+        {
+
+        }
+        else
+        {
+            int temp;
+            temp=arr2[i];
+            arr2[i]=arr2[j];
+            arr2[j]=temp;
+            i++;
+        }
+        j++;
+    }
+    a=arr2[i+1];
+    arr2[i+1]=x;
+    x=a;
+    //cout<<"hey j"<<j<<endl;
+    return(i+1);
+
+
+}
+
+int main()
+
+{
+    int arr[5],len,p=0,r;
+    int *c;
+
+    cout << "Hello world!" << endl;
+
+    cout<<"enter array";
+    for(int i=0;i<5;i++)
+    cin>>arr[i];
+    //len=sizeof(arr);
+     r=1-sizeof(arr);
+   c[0]= quicksort(arr,p,r);
+   cout<<c[0];
+   cout<<*(c+1);
+
+
+
+    return 0;
+}
